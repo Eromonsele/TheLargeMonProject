@@ -1,0 +1,73 @@
+Combat Log
+************************************
+Format for the log:
+session started
+Date and time of game: 23-45-67 23:45
+Player names: sample
+Largemon used: fdsgtshsmon
+events:
+1. COM jumped
+2. ai jumped
+session ended
+************************************
+
+
+session started on
+Date and time of game: Mon Mar  5 21:13:06 2018
+Human Player Name : gbfh
+Largemon used : malldfrmon
+Events:
+session started on
+Date and time of game: Mon Mar  5 21:27:21 2018
+Human Player Name : dfg
+Largemon used : bkndxffmon
+Events:
+session started on
+Date and time of game: Mon Mar  5 21:31:06 2018
+Human Player Name : dgsfhh
+Largemon used : bkndxffmon
+Events:
+session started on
+Date and time of game: Mon Mar  5 21:32:05 2018
+Human Player Name : dfghh
+Largemon used : bkndxffmon
+Events:
+session started on
+Date and time of game: Mon Mar  5 21:35:40 2018
+Human Player Name : dgh
+Largemon used : bkndxffmon
+Events:
+session started on
+Date and time of game: Mon Mar  5 21:52:19 2018
+Human Player Name : gfghjj
+session started on
+Date and time of game: Mon Mar  5 21:53:52 2018
+Human Player Name : dgfh
+Largemon used : bkndxffmon
+Events:
+session started on
+Date and time of game: Mon Mar  5 22:04:29 2018
+Human Player Name : dggdj
+session started on
+Date and time of game: Mon Mar  5 22:05:35 2018
+Human Player Name : dfsgfh
+session started on
+Date and time of game: Mon Mar  5 22:06:18 2018
+Human Player Name : drake
+session started on
+Date and time of game: Mon Mar  5 22:08:13 2018
+Human Player Name : dfgf
+Largemon used : malldfrmon
+Events:
+session started on
+Date and time of game: Mon Mar  5 22:10:14 2018
+Human Player Name : dghh
+Largemon used : malldfrmon
+Events:
+dghh performed defend.Health Points now: 71
+COM used defend. Health Points now:81
+session started on
+Date and time of game: Mon Mar  5 22:13:51 2018
+Human Player Name : fghh
+Largemon used : bkndxffmon
+Events:

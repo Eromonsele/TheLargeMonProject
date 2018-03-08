@@ -1,0 +1,15 @@
+Dog
+Cat
+Buffalo
+Pig
+Baboon
+Bird
+ButterFly
+Mouse
+Fish
+Lizard
+Dragon
+Sphinx
+chimaera
+axolotl
+rockfish
