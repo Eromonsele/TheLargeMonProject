@@ -17,10 +17,17 @@ public:
 	int getPoints() const;
 	int getGamesPlayed() const;
 	LargeMon getPlayerLargeMon() const;
+	int getLargeMonHealthPoints() const;
+	int getLargeMonAttackpoints() const;
+	string getLargeMonName() const;
+	string getLargeMonSize() const;
+	string getLargeMonType() const;
+	
 
 	void setPlayerLargeMon(LargeMon );
 
 	void singleGame(int , int );	
+	
 	
 private:
 	string name;
