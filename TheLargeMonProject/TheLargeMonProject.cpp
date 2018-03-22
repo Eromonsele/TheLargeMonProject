@@ -36,6 +36,7 @@ int main()
 			cin >> x;
 			if (x == 1)
 			{
+				
 				LargeMonGenerator lh;								
 				m_Player[0]->setPlayerLargeMon(lh.beginGeneration());				
 				m_Player[1]->setPlayerLargeMon(lh.beginGeneration());
