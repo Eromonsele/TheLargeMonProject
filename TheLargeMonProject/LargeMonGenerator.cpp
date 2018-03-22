@@ -49,7 +49,7 @@ LargeMon LargeMonGenerator::beginGeneration()
 	name = nameGenerator();
 	
 	LargeMon large(type,name,size,decspt,ap,hp);
-	
+	large.setAntagonist(large.getType());
 	lx.close();
 	return large;
 }

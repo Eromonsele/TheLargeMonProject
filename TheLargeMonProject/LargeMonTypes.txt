@@ -11,4 +11,3 @@ Ground
 Ice
 Poison
 Dragon
-Wood

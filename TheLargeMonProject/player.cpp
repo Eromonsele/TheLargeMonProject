@@ -68,11 +68,27 @@ string player::getLargeMonType() const
 	return largemon.getType();
 }
 
+vector<string> player::getLargeMonWeakness() const
+{
+	return largemon.getLWeakness();
+}
+
 void player::setPlayerLargeMon(LargeMon laremon)
 {
 		
 	largemon = laremon;
 }
+
+void player::setLargeMonHealthPoints(int hP)
+{
+	largemon.setHealthPoints(hP);
+}
+
+void player::setLargeMonAttackPoints(int aP)
+{
+	largemon.setAttackPoints(aP);
+}
+
 
 void player::singleGame(int playerHp, int comHp)
 {

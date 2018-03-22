@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class LargeMon
@@ -12,7 +13,8 @@ public:
 	void setSize(const string &);
 	void setDescription(const string &);
 	void setAttackPoints(int );
-	void setHealthPoints(int );
+	void setHealthPoints(int );	
+	void setAntagonist(const string &);
 
 	string getType() const;
 	string getName() const;
@@ -20,6 +22,7 @@ public:
 	string getDescription() const;
 	int getAttackPoints()const;
 	int getHealthPoints()const;
+	vector <string> getLWeakness() const;
 	
 private:
 	string ltype;
@@ -27,6 +30,7 @@ private:
 	string lsize;
 	string ldescription;
 	int lattackPoints;
-	int lhealthPoints;	
+	int lhealthPoints;
+	vector <string> lWeakness;
 };
 

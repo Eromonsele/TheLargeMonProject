@@ -11,16 +11,28 @@ combat::combat()
 
 void combat::simpleAttack(player &com,bool humanTurn , player &player1)
 {
-		
-	com.getPlayerLargeMon().setHealthPoints(com.getPlayerLargeMon().getHealthPoints() - player1.getPlayerLargeMon().getAttackPoints());
+	for (auto const& x : com.getLargeMonWeakness())
+	{
+		if (com.getLargeMonType() == x) 
+		{
+			com.setLargeMonHealthPoints(com.getLargeMonHealthPoints() - (player1.getLargeMonAttackpoints()/2));
+			break;
+		}
+		else
+		{
+			com.setLargeMonHealthPoints(com.getLargeMonHealthPoints() - player1.getLargeMonAttackpoints());
+			break;
+		}
+	}
+	//com.setLargeMonHealthPoints(com.getLargeMonHealthPoints() - player1.getLargeMonAttackpoints());
 	actionCounters++;
 	if (humanTurn == true) {		
-		combatLog("\n" + player1.getName() + " performed a simple attack. COM Health Points now: " + to_string(com.getPlayerLargeMon().getHealthPoints()));		
+		combatLog("\n" + player1.getName() + " performed a simple attack. COM Health Points now: " + to_string(com.getLargeMonHealthPoints()));		
 		setTurn(false);
 		simpleHumanCounter++;
 	}
 	else{
-		combatLog("\nCOM performed a basic attack." + player1.getName() + " Health Points now: " + to_string(player1.getPlayerLargeMon().getHealthPoints()));
+		combatLog("\nCOM performed a basic attack." + player1.getName() + " Health Points now: " + to_string(player1.getLargeMonHealthPoints()));
 		setTurn(true);
 		comSimpleCounter++;
 	}
@@ -45,20 +57,20 @@ void combat::specialAttack(LargeMon largemon, bool humanTurn, player player1)
 	}
 }
 
-void combat::defend(bool humanTurn, player player1)
+void combat::defend(bool humanTurn, player &player1)
 {
-	int i = player1.getPlayerLargeMon().getHealthPoints() + 3;
-	player1.getPlayerLargeMon().setHealthPoints(i);
+	int i = player1.getLargeMonHealthPoints() + 3;
+	player1.setLargeMonHealthPoints(i);
 	actionCounters++;
 	if (humanTurn == true) 
 	{
-		combatLog("\n" + player1.getName() + " performed defend.Health Points now: " + to_string(player1.getPlayerLargeMon().getHealthPoints()));
+		combatLog("\n" + player1.getName() + " performed defend.Health Points now: " + to_string(player1.getLargeMonHealthPoints()));
 		setTurn(false);
 		simpleHumanCounter++;
 	}
 	else
 	{
-		combatLog("\nCOM used defend. Health Points now:" + to_string(player1.getPlayerLargeMon().getHealthPoints()));
+		combatLog("\nCOM used defend. Health Points now:" + to_string(player1.getLargeMonHealthPoints()));
 		setTurn(true);
 		comSimpleCounter++;
 	}
@@ -84,7 +96,7 @@ void combat::initCombat(player player1)
 	string stuff = &dr[0];
 	combatLog("\nDate and time of game: " + stuff);
 	combatLog("Human Player Name : " + player1.getName());
-	combatLog("\nLargemon used : " + player1.getPlayerLargeMon().getName());
+	combatLog("\nLargemon used : " + player1.getLargeMonName());
 	combatLog("\nEvents:");
 }
 

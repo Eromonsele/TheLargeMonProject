@@ -22,9 +22,12 @@ public:
 	string getLargeMonName() const;
 	string getLargeMonSize() const;
 	string getLargeMonType() const;
+	vector<string> getLargeMonWeakness() const;
 	
 
 	void setPlayerLargeMon(LargeMon );
+	void setLargeMonHealthPoints(int );
+	void setLargeMonAttackPoints(int );
 
 	void singleGame(int , int );	
 	

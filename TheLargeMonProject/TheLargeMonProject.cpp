@@ -36,14 +36,8 @@ int main()
 			cin >> x;
 			if (x == 1)
 			{
-				LargeMonGenerator lh;
-				LargeMon jhjh = lh.beginGeneration();
-				LargeMon dfgh = jhjh;
-				cout << "please work:" << jhjh.getHealthPoints() << endl;
-				dfgh.setHealthPoints(45500);
-				cout << "please work:" << dfgh.getHealthPoints() << endl;
-				cout << "please work:" << jhjh.getHealthPoints() << endl;
-				m_Player[0]->setPlayerLargeMon(lh.beginGeneration());
+				LargeMonGenerator lh;								
+				m_Player[0]->setPlayerLargeMon(lh.beginGeneration());				
 				m_Player[1]->setPlayerLargeMon(lh.beginGeneration());
 				cout << "generated" << endl;
 				cout << "Combat begin" << endl;
@@ -66,8 +60,7 @@ int main()
 						switch (option)
 						{
 						case 1:
-							//session.simpleAttack(*m_Player[1], true, *m_Player[0]);
-							m_Player[1]->getPlayerLargeMon().setHealthPoints(m_Player[1]->getPlayerLargeMon().getHealthPoints() - m_Player[0]->getPlayerLargeMon().getAttackPoints());
+							session.simpleAttack(*m_Player[1], true, *m_Player[0]);							
 							break;
 						case 2:
 							session.defend(true, *m_Player[0]);

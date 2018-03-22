@@ -15,7 +15,7 @@ public:
 	
 	void simpleAttack(player &, bool, player &);
 	void specialAttack(LargeMon , bool, player);
-	void defend(bool, player );	
+	void defend(bool, player& );	
 	void combatLog(string );
 	void initCombat(player);
 
