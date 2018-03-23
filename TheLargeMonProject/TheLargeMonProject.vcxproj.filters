@@ -21,6 +21,7 @@
     <Text Include="LargeMonSizes.txt" />
     <Text Include="LargeMonDescriptor.txt" />
     <Text Include="combatLog.txt" />
+    <Text Include="LargemonLog.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">

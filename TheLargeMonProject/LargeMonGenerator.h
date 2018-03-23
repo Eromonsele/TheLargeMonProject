@@ -11,9 +11,10 @@ class LargeMonGenerator
 {
 public:
 	LargeMonGenerator();	
-	LargeMon beginGeneration();
-	ifstream readfile(string);
-	string nameGenerator();
+	LargeMon beginGeneration();//
+	ifstream readfile(string); // returns a list containing information of an external documents
+	string nameGenerator(); // creates and return the largemon name
+	void generatedLargemonLog(string, string, string, string,int, int); // creates and stores a log of largemon generated
 private:
 	vector <LargeMon> m_LargeMon;
 };

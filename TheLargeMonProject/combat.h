@@ -13,16 +13,16 @@ public:
 	
 	combat();
 	
-	void simpleAttack(player &, bool, player &);
-	void specialAttack(LargeMon , bool, player);
-	void defend(bool, player& );	
+	void simpleAttack(Player &, bool, Player &);
+	void specialAttack(Player &, bool, Player &);
+	void defend(bool, Player& );	
 	void combatLog(string );
-	void initCombat(player);
+	void initCombat(Player);
 
 	bool getTurn() const;
 	void setTurn(bool);
 
-	void comActions(player, player);
+	void comActions(Player &, Player &);
 
 private:
 	bool humanturn;	

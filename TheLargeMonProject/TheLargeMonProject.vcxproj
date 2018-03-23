@@ -23,7 +23,7 @@
     <ProjectGuid>{4F22EEFF-B992-45F8-9E53-6D9456E9B48E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>TheLargeMonProject</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -146,6 +146,7 @@
     <Text Include="combatLog.txt" />
     <Text Include="LargeMonDescriptor.txt" />
     <Text Include="LargeMonGenerated.txt" />
+    <Text Include="LargemonLog.txt" />
     <Text Include="LargeMonSizes.txt" />
     <Text Include="LargeMonTypes.txt" />
     <Text Include="ReadMe.txt" />

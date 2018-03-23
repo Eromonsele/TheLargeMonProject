@@ -12,165 +12,42 @@ session ended
 ************************************
 
 
+
 session started on
-Date and time of game: Mon Mar  5 21:13:06 2018
-Human Player Name : gbfh
-Largemon used : malldfrmon
-Events:
-session started on
-Date and time of game: Mon Mar  5 21:27:21 2018
-Human Player Name : dfg
-Largemon used : bkndxffmon
-Events:
-session started on
-Date and time of game: Mon Mar  5 21:31:06 2018
-Human Player Name : dgsfhh
-Largemon used : bkndxffmon
-Events:
-session started on
-Date and time of game: Mon Mar  5 21:32:05 2018
-Human Player Name : dfghh
-Largemon used : bkndxffmon
-Events:
-session started on
-Date and time of game: Mon Mar  5 21:35:40 2018
-Human Player Name : dgh
-Largemon used : bkndxffmon
-Events:
-session started on
-Date and time of game: Mon Mar  5 21:52:19 2018
-Human Player Name : gfghjj
-session started on
-Date and time of game: Mon Mar  5 21:53:52 2018
-Human Player Name : dgfh
-Largemon used : bkndxffmon
-Events:
-session started on
-Date and time of game: Mon Mar  5 22:04:29 2018
-Human Player Name : dggdj
-session started on
-Date and time of game: Mon Mar  5 22:05:35 2018
-Human Player Name : dfsgfh
-session started on
-Date and time of game: Mon Mar  5 22:06:18 2018
+Date and time of game: Fri Mar 23 10:30:43 2018
 Human Player Name : drake
-session started on
-Date and time of game: Mon Mar  5 22:08:13 2018
-Human Player Name : dfgf
-Largemon used : malldfrmon
+Largemon used : malldfr-mon
 Events:
-session started on
-Date and time of game: Mon Mar  5 22:10:14 2018
-Human Player Name : dghh
-Largemon used : malldfrmon
-Events:
-dghh performed defend.Health Points now: 71
-COM used defend. Health Points now:81
-session started on
-Date and time of game: Mon Mar  5 22:13:51 2018
-Human Player Name : fghh
-Largemon used : bkndxffmon
-Events:
-session started on
-Date and time of game: Thu Mar 22 15:43:53 2018
-Human Player Name : drakeee
-Largemon used : bkndxffmon
-Events:
-session started on
-Date and time of game: Thu Mar 22 15:47:10 2018
-Human Player Name : name
-Largemon used : bkndxffmon
-Events:
-name performed defend.Health Points now: 81
-COM used defend. Health Points now:33
-session started on
-Date and time of game: Thu Mar 22 16:01:52 2018
-Human Player Name : bame
-Largemon used : bkndxffmon
-Events:
-bame performed defend.Health Points now: 81
-COM used defend. Health Points now:33
-session started on
-Date and time of game: Thu Mar 22 16:19:02 2018
-Human Player Name : fdg
-Largemon used : bkndxffmon
-Events:
-fdg performed defend.Health Points now: 81
-COM used defend. Health Points now:33
-session started on
-Date and time of game: Thu Mar 22 16:20:23 2018
-Human Player Name : dafa
-Largemon used : bkndxffmon
-Events:
-dafa performed defend.Health Points now: 81
-COM used defend. Health Points now:24
-session started on
-Date and time of game: Thu Mar 22 16:21:40 2018
-Human Player Name : dre
-Largemon used : bkndxffmon
-Events:
-dre performed a simple attack. COM Health Points now: 33
-COM used defend. Health Points now:33
-session started on
-Date and time of game: Thu Mar 22 16:28:18 2018
-Human Player Name : eromon
-Largemon used : bkndxffmon
-Events:
-eromon performed a simple attack. COM Health Points now: 24
-COM used defend. Health Points now:27
-eromon performed defend.Health Points now: 84
-COM used defend. Health Points now:27
-eromon performed defend.Health Points now: 84
-COM used defend. Health Points now:27
-session started on
-Date and time of game: Thu Mar 22 16:30:38 2018
-Human Player Name : dfdf
-Largemon used : bkndxffmon
-Events:
-dfdf performed a simple attack. COM Health Points now: 24
-COM used defend. Health Points now:27
-dfdf performed defend.Health Points now: 84
-COM used defend. Health Points now:27
-dfdf performed defend.Health Points now: 87
-COM used defend. Health Points now:27
-dfdf performed a simple attack. COM Health Points now: 15
-COM used defend. Health Points now:18
-dfdf performed a simple attack. COM Health Points now: 6
-COM used defend. Health Points now:9
-dfdf performed a simple attack. COM Health Points now: -3
-COM used defend. Health Points now:0
-session started on
-Date and time of game: Thu Mar 22 18:51:13 2018
-Human Player Name : drake
-Largemon used : malldfrmon
-Events:
-drake performed a simple attack. COM Health Points now: 67
-COM used defend. Health Points now:70
-drake performed a simple attack. COM Health Points now: 53
-COM used defend. Health Points now:56
-drake performed defend.Health Points now: 74
-COM used defend. Health Points now:56
-drake performed defend.Health Points now: 77
-COM used defend. Health Points now:56
-drake performed defend.Health Points now: 80
-COM used defend. Health Points now:56
-session started on
-Date and time of game: Thu Mar 22 18:54:24 2018
-Human Player Name : bame
-Largemon used : malldfrmon
-Events:
-session started on
-Date and time of game: Thu Mar 22 18:57:44 2018
-Human Player Name : dgf
-Largemon used : malldfrmon
-Events:
-dgf performed a simple attack. COM Health Points now: 74
+drake performed a simple attack. COM Health Points now: 74
 COM used defend. Health Points now:77
-dgf performed a simple attack. COM Health Points now: 67
-COM used defend. Health Points now:70
-dgf performed defend.Health Points now: 74
-COM used defend. Health Points now:70
-dgf performed defend.Health Points now: 77
-COM used defend. Health Points now:70
-dgf performed defend.Health Points now: 80
-COM used defend. Health Points now:70
+drake performed a simple attack. COM Health Points now: 70
+COM used defend. Health Points now:73
+drake performed a simple attack. COM Health Points now: 66
+COM performed a basic attack.COM Health Points now: 66
+drake performed a simple attack. COM Health Points now: 59
+COM used defend. Health Points now:62
+drake performed a simple attack. COM Health Points now: 55
+COM used defend. Health Points now:58
+drake performed a simple attack. COM Health Points now: 51
+COM performed a basic attack.COM Health Points now: 51
+drake performed a simple attack. COM Health Points now: 44
+COM used defend. Health Points now:47
+drake performed a simple attack. COM Health Points now: 40
+COM used defend. Health Points now:43
+drake performed a simple attack. COM Health Points now: 36
+COM used defend. Health Points now:39
+drake performed a simple attack. COM Health Points now: 32
+COM performed a basic attack.COM Health Points now: 32
+drake performed a simple attack. COM Health Points now: 25
+COM used defend. Health Points now:28
+drake performed a simple attack. COM Health Points now: 21
+COM performed a basic attack.COM Health Points now: 21
+drake performed a simple attack. COM Health Points now: 14
+COM performed a basic attack.COM Health Points now: 14
+drake performed a simple attack. COM Health Points now: 7
+COM used defend. Health Points now:10
+drake performed a simple attack. COM Health Points now: 3
+COM used defend. Health Points now:6
+drake performed a simple attack. COM Health Points now: -1
+drake Destroyed COM
+********************************************************************************************

@@ -8,27 +8,31 @@ combat::combat()
 		
 }
 
-
-void combat::simpleAttack(player &com,bool humanTurn , player &player1)
+/*
+Simple attack : this reduces the health points of the other Largemon by the amount of
+“attack points” of the attacker.
+*/
+void combat::simpleAttack(Player &com,bool humanTurn , Player &player1)
 {
-	for (auto const& x : com.getLargeMonWeakness())
+	for (auto const& x : com.getLargeMonWeakness())// go through the largemon's weaknesses
 	{
-		if (com.getLargeMonType() == x) 
+		if (com.getLargeMonType() == x) // if opponent's largemon type matches player's laremon weakness
 		{
+			// attack will have reduced by half
 			com.setLargeMonHealthPoints(com.getLargeMonHealthPoints() - (player1.getLargeMonAttackpoints()/2));
 			break;
 		}
 		else
 		{
+			// attack
 			com.setLargeMonHealthPoints(com.getLargeMonHealthPoints() - player1.getLargeMonAttackpoints());
 			break;
 		}
-	}
-	//com.setLargeMonHealthPoints(com.getLargeMonHealthPoints() - player1.getLargeMonAttackpoints());
+	}	
 	actionCounters++;
-	if (humanTurn == true) {		
-		combatLog("\n" + player1.getName() + " performed a simple attack. COM Health Points now: " + to_string(com.getLargeMonHealthPoints()));		
-		setTurn(false);
+	if (humanTurn == true) {// if it is the human turn
+		combatLog("\n" + player1.getName() + " performed a simple attack. COM Health Points now: " + to_string(com.getLargeMonHealthPoints()));	// add to the combat log	
+		setTurn(false);// change turn to AI
 		simpleHumanCounter++;
 	}
 	else{
@@ -38,26 +42,41 @@ void combat::simpleAttack(player &com,bool humanTurn , player &player1)
 	}
 	
 }
-
-void combat::specialAttack(LargeMon largemon, bool humanTurn, player player1)
+/*
+Special attack: this is an attack that can be used only on Largemons of the antagonist
+type. For instance, a Water Largemon can use a special attack only against a Fire
+Largemon. The special attack can be used only once per combat, and reduces the heal
+points of the attacked by twice the attack points of the attacker.
+*/
+void combat::specialAttack(Player &com, bool humanTurn, Player &player1)
 {
-	int attackPoints = largemon.getAttackPoints();
-	actionCounters++;
-	if (humanTurn == true)
+	for (auto const& x : com.getLargeMonWeakness())// go through the largemon's weaknesses
 	{
-		combatLog("\n" + player1.getName() + " performed special attack. COM Health Points now: " + to_string(largemon.getHealthPoints()));
-		setTurn(false);
+		if (player1.getLargeMonType() == x) // if opponent's largemon type matches player's laremon weakness
+		{
+			//attack will have reduced by half
+			com.setLargeMonHealthPoints(com.getLargeMonHealthPoints() - ((player1.getLargeMonAttackpoints() * 2)));
+			break;
+		}		
+	}
+	
+	if (humanTurn == true)// if it is the human turn
+	{
+		combatLog("\n" + player1.getName() + " performed special attack. COM Health Points now: " + to_string(com.getLargeMonHealthPoints()));// add to the combat log
+		setTurn(false);// change turn to AI
 		simpleHumanCounter= 0;
 	}
 	else
 	{
-		combatLog("\nCOM used defend." + player1.getName() + " Health Points now: " + to_string(largemon.getHealthPoints()));
+		combatLog("\nCOM used defend." + player1.getName() + " Health Points now: " + to_string(player1.getLargeMonHealthPoints()));
 		setTurn(true);
 		comSimpleCounter = 0;
 	}
 }
-
-void combat::defend(bool humanTurn, player &player1)
+/*
+Defend: a Largemon recovers a small amount of its health points.
+*/
+void combat::defend(bool humanTurn, Player &player1)
 {
 	int i = player1.getLargeMonHealthPoints() + 3;
 	player1.setLargeMonHealthPoints(i);
@@ -75,7 +94,7 @@ void combat::defend(bool humanTurn, player &player1)
 		comSimpleCounter++;
 	}
 }
-
+//write each session to the combat log
 void combat::combatLog(string action)
 {
 	ofstream outFile("combatLog.txt", ios::app);
@@ -86,8 +105,8 @@ void combat::combatLog(string action)
 	}
 	outFile << action;
 }
-
-void combat::initCombat(player player1)
+// initialize combat session
+void combat::initCombat(Player player1)
 {
 	time_t result = time(NULL);	
 	char dr[26];
@@ -100,23 +119,23 @@ void combat::initCombat(player player1)
 	combatLog("\nEvents:");
 }
 
-
+// returns true or false if it is the humans turn
 bool combat::getTurn() const
 {
 	return humanturn;
 }
-
+// sets humanturn
 void combat::setTurn(bool a)
 {
 	humanturn = a;
 }
 
-void combat::comActions(player com, player human)
+void combat::comActions(Player &com, Player &human)
 {
 	switch (rand() % 2)
 	{
 	case 0:
-		//simpleAttack(human, false, com);
+		simpleAttack(human, false, com);
 		break;
 	case 1:
 		defend( false, com);
@@ -124,14 +143,14 @@ void combat::comActions(player com, player human)
 	case 2:
 		if (comSimpleCounter >= 5)
 		{
-			specialAttack(human.getPlayerLargeMon(), false, com);
+			specialAttack(human, false, com);
 			break;
 		}
 		else {
 			break;
 		}		
 	default:
-		//simpleAttack(human, false, com);
+		simpleAttack(human, false, com);
 		break;
 	}
 }

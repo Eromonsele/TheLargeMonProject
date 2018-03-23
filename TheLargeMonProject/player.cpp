@@ -2,95 +2,111 @@
 #include "player.h"
 
 
-
-player::player(const string &lname) : name(lname), largemon("", "", "", "", 0, 0)
+// constructor
+Player::Player(const string &lname) : name(lname), largemon("", "", "", "", 0, 0)
 {
+	//empty body
+}// end LargeMon constructor
 
-}
-
-void player::setName(const string &lname)
+// set player name
+void Player::setName(const string &lname)
 {
 	name = lname;
-}
+}// end function
 
-string player::getName() const
+// return player name
+string Player::getName() const
 {
-	return name;
-}
+	return name;  
+}// end function
 
-int player::getWins() const
+// return player wins
+int Player::getWins() const
 {
 	return wins;
-}
+}// end function
 
-int player::getLosses() const
+// return player losses
+int Player::getLosses() const
 {
 	return losses;
-}
+}// end function
 
-int player::getPoints() const
+// return player points
+int Player::getPoints() const
 {
 	return points;
-}
+}// end function
 
-int player::getGamesPlayed() const
+// return games player played
+int Player::getGamesPlayed() const
 {
 	return gamesPlayed;
-}
+}// end function
 
-LargeMon player::getPlayerLargeMon() const
+// return player largemon
+LargeMon Player::getPlayerLargeMon() const
 {
 	return largemon;
-}
+}// end function
 
-int player::getLargeMonHealthPoints() const
+// return player largemon healthpoints 
+int Player::getLargeMonHealthPoints() const
 {
 	return largemon.getHealthPoints();
-}
+}// end function
 
-int player::getLargeMonAttackpoints() const
+// return player largemon attack points
+int Player::getLargeMonAttackpoints() const
 {
 	return largemon.getAttackPoints();
-}
+}// end function
 
-string player::getLargeMonName() const
+// return player largemon name
+string Player::getLargeMonName() const
 {
 	return largemon.getName();
-}
+}// end function
 
-string player::getLargeMonSize() const
+// return player largemon size
+string Player::getLargeMonSize() const
 {
 	return largemon.getSize();
-}
+}// end function
 
-string player::getLargeMonType() const
+// return player largemon type
+string Player::getLargeMonType() const
 {
 	return largemon.getType();
-}
+}// end function
 
-vector<string> player::getLargeMonWeakness() const
+// return player largemon weakness
+vector<string> Player::getLargeMonWeakness() const
 {
 	return largemon.getLWeakness();
-}
+}// end function
 
-void player::setPlayerLargeMon(LargeMon laremon)
+// set player largemon
+void Player::setPlayerLargeMon(LargeMon laremon)
 {
 		
 	largemon = laremon;
-}
+}// end function
 
-void player::setLargeMonHealthPoints(int hP)
+// set player largemon healthpoints
+void Player::setLargeMonHealthPoints(int hP)
 {
 	largemon.setHealthPoints(hP);
-}
+}// end function
 
-void player::setLargeMonAttackPoints(int aP)
+// set player largemon attackpoints
+void Player::setLargeMonAttackPoints(int aP)
 {
 	largemon.setAttackPoints(aP);
-}
+}// end function
 
-
-void player::singleGame(int playerHp, int comHp)
+// simulates the singelgame
+void Player::singleGame(int playerHp, int comHp)
 {
 	gamesPlayed++;
 	if (playerHp > comHp)
@@ -102,5 +118,5 @@ void player::singleGame(int playerHp, int comHp)
 	{
 		losses++;
 	}
-}
+}// end function
 
