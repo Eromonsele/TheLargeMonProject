@@ -1,10 +1,9 @@
 #pragma once
 #include <iostream>
-#include "LargeMonGenerator.h"
 #include "largeMon.h"
 using namespace std;
 /**
-*
+*The user player object
 * Author: Eromosele Okhilua
 *
 */

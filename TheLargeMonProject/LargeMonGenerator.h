@@ -6,6 +6,13 @@
 #include <fstream>
 
 using namespace std;
+/*
+This class generates a largemon( type, name, size, description, health points).
+This class also stores the largemon generated in an external documents.
+
+Author: Eromosele Okhilua
+
+*/
 
 class LargeMonGenerator
 {

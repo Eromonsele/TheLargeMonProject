@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="combat.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="largeMon.h" />
     <ClInclude Include="LargeMonGenerator.h" />
     <ClInclude Include="player.h" />
@@ -161,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="combat.cpp" />
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="largeMon.cpp" />
     <ClCompile Include="LargeMonGenerator.cpp" />
     <ClCompile Include="player.cpp" />

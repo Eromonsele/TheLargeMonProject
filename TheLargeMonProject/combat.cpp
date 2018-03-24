@@ -1,18 +1,22 @@
 #include "stdafx.h"
 #include "combat.h"
 #include <time.h>
-
-
-combat::combat()
+/*
+Combat class: implements various battle functions such as simple attack, special attack and defence.
+Author: Eromosele Okhilua
+Student Number: u1671506
+*/
+//constructor
+Combat::Combat()
 {
-		
-}
+	//empty body
+}// end constructor
 
 /*
 Simple attack : this reduces the health points of the other Largemon by the amount of
 “attack points” of the attacker.
 */
-void combat::simpleAttack(Player &com,bool humanTurn , Player &player1)
+void Combat::simpleAttack(Player &com,bool humanTurn , Player &player1)
 {
 	for (auto const& x : com.getLargeMonWeakness())// go through the largemon's weaknesses
 	{
@@ -20,23 +24,29 @@ void combat::simpleAttack(Player &com,bool humanTurn , Player &player1)
 		{
 			// attack will have reduced by half
 			com.setLargeMonHealthPoints(com.getLargeMonHealthPoints() - (player1.getLargeMonAttackpoints()/2));
+			
 			break;
 		}
 		else
 		{
 			// attack
 			com.setLargeMonHealthPoints(com.getLargeMonHealthPoints() - player1.getLargeMonAttackpoints());
+			
 			break;
 		}
 	}	
 	actionCounters++;
 	if (humanTurn == true) {// if it is the human turn
+		// print to the combat log
 		combatLog("\n" + player1.getName() + " performed a simple attack. COM Health Points now: " + to_string(com.getLargeMonHealthPoints()));	// add to the combat log	
+		cout << "\n" + player1.getName() + " performed a simple attack." << endl;
 		setTurn(false);// change turn to AI
 		simpleHumanCounter++;
 	}
 	else{
+		// print to the combat log
 		combatLog("\nCOM performed a basic attack." + player1.getName() + " Health Points now: " + to_string(player1.getLargeMonHealthPoints()));
+		cout << "\n" + com.getName() + " performed a simple attack." << endl;
 		setTurn(true);
 		comSimpleCounter++;
 	}
@@ -48,7 +58,7 @@ type. For instance, a Water Largemon can use a special attack only against a Fir
 Largemon. The special attack can be used only once per combat, and reduces the heal
 points of the attacked by twice the attack points of the attacker.
 */
-void combat::specialAttack(Player &com, bool humanTurn, Player &player1)
+void Combat::specialAttack(Player &com, bool humanTurn, Player &player1)
 {
 	for (auto const& x : com.getLargeMonWeakness())// go through the largemon's weaknesses
 	{
@@ -62,13 +72,17 @@ void combat::specialAttack(Player &com, bool humanTurn, Player &player1)
 	
 	if (humanTurn == true)// if it is the human turn
 	{
+		// print to the combat log
 		combatLog("\n" + player1.getName() + " performed special attack. COM Health Points now: " + to_string(com.getLargeMonHealthPoints()));// add to the combat log
+		cout << "\n" + player1.getName() + " performed a special attack." << endl;
 		setTurn(false);// change turn to AI
 		simpleHumanCounter= 0;
 	}
 	else
-	{
+	{	
+		// print to the combat log
 		combatLog("\nCOM used defend." + player1.getName() + " Health Points now: " + to_string(player1.getLargeMonHealthPoints()));
+		cout << "\n" + com.getName() + " performed a special attack." << endl;
 		setTurn(true);
 		comSimpleCounter = 0;
 	}
@@ -76,26 +90,29 @@ void combat::specialAttack(Player &com, bool humanTurn, Player &player1)
 /*
 Defend: a Largemon recovers a small amount of its health points.
 */
-void combat::defend(bool humanTurn, Player &player1)
+void Combat::defend(bool humanTurn, Player &player1)
 {
 	int i = player1.getLargeMonHealthPoints() + 3;
 	player1.setLargeMonHealthPoints(i);
 	actionCounters++;
 	if (humanTurn == true) 
 	{
-		combatLog("\n" + player1.getName() + " performed defend.Health Points now: " + to_string(player1.getLargeMonHealthPoints()));
+		// print to the combat log
+		combatLog("\n" + player1.getName() + " performed defend.Health Points now: " + to_string(player1.getLargeMonHealthPoints()));		
 		setTurn(false);
 		simpleHumanCounter++;
 	}
 	else
 	{
-		combatLog("\nCOM used defend. Health Points now:" + to_string(player1.getLargeMonHealthPoints()));
+		// print to the combat log
+		combatLog("\nCOM used defend. Health Points now:" + to_string(player1.getLargeMonHealthPoints()));		
 		setTurn(true);
 		comSimpleCounter++;
 	}
+	cout << "\n" + player1.getName() + " performed defence." << endl;
 }
 //write each session to the combat log
-void combat::combatLog(string action)
+void Combat::combatLog(string action)
 {
 	ofstream outFile("combatLog.txt", ios::app);
 	if (!outFile)
@@ -106,7 +123,7 @@ void combat::combatLog(string action)
 	outFile << action;
 }
 // initialize combat session
-void combat::initCombat(Player player1)
+void Combat::initCombat(Player player1)
 {
 	time_t result = time(NULL);	
 	char dr[26];
@@ -120,17 +137,17 @@ void combat::initCombat(Player player1)
 }
 
 // returns true or false if it is the humans turn
-bool combat::getTurn() const
+bool Combat::getTurn() const
 {
 	return humanturn;
 }
 // sets humanturn
-void combat::setTurn(bool a)
+void Combat::setTurn(bool a)
 {
 	humanturn = a;
 }
-
-void combat::comActions(Player &com, Player &human)
+// randomly select an action to be performed by the AI
+void Combat::comActions(Player &com, Player &human)
 {
 	switch (rand() % 2)
 	{

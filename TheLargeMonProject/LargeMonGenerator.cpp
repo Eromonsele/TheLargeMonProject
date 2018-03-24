@@ -103,6 +103,6 @@ void LargeMonGenerator::generatedLargemonLog(string t, string n, string s, strin
 		exit(1);
 	}
 
-	outFile << number + ": Largemon Name: " + n + " Largemon Description : " + n + " is a " + s + " " + d + " " + t + " type largemon";
+	outFile <<number + ": Largemon Name: " + n + " Largemon Description : " + n + " is a " + s + " " + d + " " + t + " type largemon \n";
 	number++;
 }

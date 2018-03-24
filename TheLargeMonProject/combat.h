@@ -7,11 +7,11 @@
 #include <ctime>
 #include <stdio.h>
 #include "player.h"
-class combat
+class Combat
 {
 public:
 	
-	combat();
+	Combat();
 	
 	void simpleAttack(Player &, bool, Player &);
 	void specialAttack(Player &, bool, Player &);

@@ -1,16 +1,16 @@
-// TheLargeMonProject.cpp : Defines the entry point for the console application.
-//
+/*
+TheLargeMonProject.cpp : Defines the entry point for the console application.
+
+Author: Eromosele Okhilua
+Student Number: u1671506
+
+*/
 
 #include "stdafx.h"
-#include "largeMon.h"
-#include "LargeMonGenerator.h"
-#include "player.h"
-#include "combat.h"
-#include <fstream>
-
+#include "Controller.h"
 int main()
 {
-
+	Controller con;// the contoller
 	int x;
 	cout << "Press 1 to start the game" << endl;
 	cout << "Press 0 to exit the game" << endl;
@@ -25,10 +25,13 @@ int main()
 		{
 			int x;
 			string xword;
-			cout << "Type in players name" << endl;
+			cout << "Type in players name :" << endl;
 			cin >> xword;
+			// initialise player name
 			Player p1(xword);
+			// add to user vector
 			m_Player[0] = &p1;
+			// initialise player name
 			Player com("COM");
 			m_Player[1] = &com;
 			cout << m_Player[0]->getName() << " has been created and " << m_Player[1]->getName() << " has been created" << endl;
@@ -36,82 +39,53 @@ int main()
 			cin >> x;
 			if (x == 1)
 			{
-
-				LargeMonGenerator lh;
-				m_Player[0]->setPlayerLargeMon(lh.beginGeneration());
-				m_Player[1]->setPlayerLargeMon(lh.beginGeneration());
-				cout << "generated" << endl;
-				cout << "Combat begin" << endl;
-				combat session;
+				// initial largemon generation 
+				con.assignLargemonToPlayer(*m_Player[0], *m_Player[1]);
+				while (true)
+				{	
+					string optionChar;
+					//display user's largemon attributes
+					con.displayLargemonAttributes(*m_Player[0]);
+					// check if user wants his largemon
+					cout << "Do you wish to regenerate a new largemon?" << endl;
+					cout << "Input Y(Yes) or N(No):" << endl;
+					cin >> optionChar;
+					// if the option is yes, regenerate largemon 
+					if (optionChar == "Y" || optionChar == "y" || optionChar == "Yes")
+					{
+						// largemon generation
+						con.assignLargemonToPlayer(*m_Player[0], *m_Player[1]);						
+					}
+					else {
+						break;
+					}
+				}
+				// Begin the combat session
+				Combat session;
+				// Initialize the combat session
 				session.initCombat(*m_Player[0]);
 				int option;
 				cout << "Combat Begins" << endl;
-				session.setTurn(true);
+				session.setTurn(true);// set the turn of the session to the human's turn
 				int exitGame = 1;
-				while (exitGame != 0)
+				while (exitGame != 0 )
 				{
-					if (m_Player[0]->getLargeMonHealthPoints() < 0 || m_Player[1]->getLargeMonHealthPoints() < 0)
-					{
-						cout << "GAME OVER!!!!!!!!" << endl;
-						m_Player[0]->singleGame(m_Player[0]->getLargeMonHealthPoints(), m_Player[1]->getLargeMonHealthPoints());
-						m_Player[1]->singleGame(m_Player[1]->getLargeMonHealthPoints(), m_Player[0]->getLargeMonHealthPoints());
-
-						if (m_Player[0]->getLargeMonHealthPoints() < 0)
-						{
-							session.combatLog("\n" + m_Player[1]->getName() + " Destroyed " + m_Player[0]->getName());
-							cout << m_Player[1]->getName() << " WINS!!!!!" << endl;							
-						}
-						else if (m_Player[1]->getLargeMonHealthPoints() < 0)
-						{
-							session.combatLog("\n" + m_Player[0]->getName() + " Destroyed " + m_Player[1]->getName());
-							cout << m_Player[0]->getName() << " WINS!!!!!" << endl;
-							
-						}
-						session.combatLog("\n********************************************************************************************");
-						 exitGame = 0;
-					}
-
-					if (session.getTurn() == true)
-					{
-
-						cout << "\n" << m_Player[0]->getName() + " turn" << endl;
-						cout << "Pick a battle action" << endl;
-						cout << "Option 1: Simple Attack\nOption 2: Defend\nOption 3: Special Attack" << endl;
-						cin >> option;
-						switch (option)
-						{
-						case 1:
-							session.simpleAttack(*m_Player[1], true, *m_Player[0]);
-							break;
-						case 2:
-							session.defend(true, *m_Player[0]);
-							break;
-						case 3:
-							session.specialAttack(*m_Player[1], true, *m_Player[0]);
-							break;
-						default:
-							break;
-						}
-
-					}
-					else
-					{
-						cout << "\n" << m_Player[1]->getName() + " turn" << endl;
-						session.comActions(*m_Player[1], *m_Player[0]);
-					}
-					cout << "human current healthpoints : " << m_Player[0]->getPlayerLargeMon().getHealthPoints() << endl;
-					cout << "com current healthpoints : " << m_Player[1]->getPlayerLargeMon().getHealthPoints() << endl;
+					exitGame = con.checkGameStatus(*m_Player[0], *m_Player[1]);
+					con.gameSession(*m_Player[0], *m_Player[1]);// run the game event session
+					con.displayHealthPoints(*m_Player[0], *m_Player[1]);// display health Points
 				}
-
-				
-
 			}
-
-
+			else {				
+				return 0;
+			}
+		}
+		else
+		{
+			return 0;
 		}
 	}
 	else {
 		return 0;
 	}	
-}
+}// end of project
 
