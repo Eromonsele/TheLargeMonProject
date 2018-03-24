@@ -1,6 +1,1 @@
-﻿  Controller.cpp
-  TheLargeMonProject.cpp
-c:\users\seleo\source\repos\thelargemonproject3\thelargemonproject\thelargemonproject.cpp(77): warning C4101: 'option': unreferenced local variable
-  Generating Code...
-c:\users\seleo\source\repos\thelargemonproject3\thelargemonproject\controller.cpp(46): warning C4715: 'Controller::checkGameStatus': not all control paths return a value
-  TheLargeMonProject.vcxproj -> C:\Users\seleo\Source\Repos\TheLargeMonProject3\Debug\TheLargeMonProject.exe
+﻿  TheLargeMonProject.vcxproj -> C:\Users\seleo\source\repos\TheLargeMonProject3\Debug\TheLargeMonProject.exe
