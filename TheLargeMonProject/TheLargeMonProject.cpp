@@ -7,10 +7,13 @@ Student Number: u1671506
 */
 
 #include "stdafx.h"
-#include "Controller.h"
+#include "TheLargeMonProject.h"
+
+
 int main()
 {
-	Controller con;// the contoller
+	TheLargeMonProject l;	
+	//Controller con;// the contoller	
 	int x;
 	cout << "Welcome to the LargeMon Project" <<endl;
 	cout << "////////////////////////////////////////////" << endl;
@@ -42,12 +45,13 @@ int main()
 			if (x == 1)
 			{
 				// initial largemon generation 
-				con.assignLargemonToPlayer(*m_Player[0], *m_Player[1]);
+				l.con.assignLargemonToPlayer(*m_Player[0], *m_Player[1]);
+				
 				while (true)
 				{	
 					string optionChar;
 					//display user's largemon attributes
-					con.displayLargemonAttributes(*m_Player[0]);
+					l.con.displayLargemonAttributes(*m_Player[0]);
 					// check if user wants his largemon
 					cout << "Do you wish to regenerate a new largemon?" << endl;
 					cout << "Input Y(Yes) or N(No):" << endl;
@@ -56,7 +60,7 @@ int main()
 					if (optionChar == "Y" || optionChar == "y" || optionChar == "Yes" || optionChar == "YES")
 					{
 						// largemon generation
-						con.assignLargemonToPlayer(*m_Player[0], *m_Player[1]);						
+						l.con.assignLargemonToPlayer(*m_Player[0], *m_Player[1]);						
 					}
 					else if (optionChar == "N" || optionChar == "n" || optionChar == "No" || optionChar == "NO")
 					{
@@ -75,9 +79,9 @@ int main()
 				int exitGame = 1;
 				while (exitGame != 0 )
 				{
-					exitGame = con.checkGameStatus(*m_Player[0], *m_Player[1]);
-					con.gameSession(*m_Player[0], *m_Player[1]);// run the game event session
-					con.displayHealthPoints(*m_Player[0], *m_Player[1]);// display health Points
+					exitGame = l.con.checkGameStatus(*m_Player[0], *m_Player[1]);
+					l.con.gameSession(*m_Player[0], *m_Player[1]);// run the game event session
+					l.con.displayHealthPoints(*m_Player[0], *m_Player[1]);// display health Points
 				}
 			}
 			else {				

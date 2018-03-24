@@ -10,6 +10,7 @@ Version:
 Controller::Controller()
 {
 	session.setTurn(true);
+
 }
 
 
@@ -85,7 +86,7 @@ void Controller::displayHealthPoints(Player &playerOne, Player &computer)
 
 void Controller::assignLargemonToPlayer(Player &playerOne, Player &computer)
 {
-	LargeMonGenerator lh;
+	
 	playerOne.setPlayerLargeMon(lh.beginGeneration());
 	computer.setPlayerLargeMon(lh.beginGeneration());
 }

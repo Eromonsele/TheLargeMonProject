@@ -22,5 +22,6 @@ public:
 	void assignLargemonToPlayer(Player &, Player &);// Assign Largemon to a player
 	void displayLargemonAttributes(Player &);// Display Largemon Attributes
 	Combat session;
+	LargeMonGenerator lh;	
 };
 

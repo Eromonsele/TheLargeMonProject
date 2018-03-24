@@ -20,3 +20,7 @@
  Largemon Name: bkndxff-mon Largemon Description : bkndxff-mon is a small Mouse-like Normal type largemon 
  Largemon Name: malldfr-mon Largemon Description : malldfr-mon is a tiny rockfish-like Grass type largemon 
  Largemon Name: bkndxff-mon Largemon Description : bkndxff-mon is a small Mouse-like Normal type largemon 
+ Largemon Name: malld-mon Largemon Description : malld-mon is a tiny rockfish-like Grass type largemon 
+ Largemon Name: cgbk-mon Largemon Description : cgbk-mon is a tiny ButterFly-like Electric type largemon 
+ Largemon Name: ffzst-mon Largemon Description : ffzst-mon is a large Lizard-like Grass type largemon 
+ Largemon Name: grnu-mon Largemon Description : grnu-mon is a tiny Buffalo-like Electric type largemon 
