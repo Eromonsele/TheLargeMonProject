@@ -108,15 +108,15 @@ void Player::setLargeMonAttackPoints(int aP)
 // simulates the singelgame
 void Player::singleGame(int playerHp, int comHp)
 {
-	gamesPlayed++;
-	if (playerHp > comHp)
+	gamesPlayed++;// increase games played
+	if (playerHp > comHp)// if player health points is greater than its opponent
 	{
-		wins++;
-		points += 3;
+		wins++;// increase wins
+		points += 3;// increase total points by 3
 	}
 	else
 	{
-		losses++;
+		losses++;// increase losses
 	}
 }// end function
 

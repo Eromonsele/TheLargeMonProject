@@ -84,7 +84,7 @@ string LargeMonGenerator::nameGenerator()
 {
 	string letters = "abcdefghijklmnopqrstvuwxyz";//used as an array of letters
 	string name;
-	for (int i = 0; i < rand() % 3 + 7; i++)
+	for (int i = 0; i < rand() % 7 + 3; i++)
 	{
 		name.append(1,letters[rand() % letters.size()]);
 	}
