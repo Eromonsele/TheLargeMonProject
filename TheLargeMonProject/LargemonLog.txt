@@ -4,3 +4,19 @@
  Largemon Name: qeiefzika-mon Largemon Description : qeiefzika-mon is a large Baboon-like Psychic type largemon 
  Largemon Name: malldfr-mon Largemon Description : malldfr-mon is a tiny rockfish-like Grass type largemon 
  Largemon Name: bkndxff-mon Largemon Description : bkndxff-mon is a small Mouse-like Normal type largemon 
+ Largemon Name: malldfr-mon Largemon Description : malldfr-mon is a tiny rockfish-like Grass type largemon 
+ Largemon Name: bkndxff-mon Largemon Description : bkndxff-mon is a small Mouse-like Normal type largemon 
+ Largemon Name: jrpgrnusm-mon Largemon Description : jrpgrnusm-mon is a small Pig-like Psychic type largemon 
+ Largemon Name: qeiefzika-mon Largemon Description : qeiefzika-mon is a large Baboon-like Psychic type largemon 
+ Largemon Name: zyxxlgpf-mon Largemon Description : zyxxlgpf-mon is a colossal Sphinx-like Psychic type largemon 
+ Largemon Name: xbojuuby-mon Largemon Description : xbojuuby-mon is a tiny Dog-like Water type largemon 
+ Largemon Name: pnluupay-mon Largemon Description : pnluupay-mon is a large chimaera-like Electric type largemon 
+ Largemon Name: qmvjouov-mon Largemon Description : qmvjouov-mon is a colossal chimaera-like Grass type largemon 
+ Largemon Name: malldfr-mon Largemon Description : malldfr-mon is a tiny rockfish-like Grass type largemon 
+ Largemon Name: bkndxff-mon Largemon Description : bkndxff-mon is a small Mouse-like Normal type largemon 
+ Largemon Name: jrpgrnusm-mon Largemon Description : jrpgrnusm-mon is a small Pig-like Psychic type largemon 
+ Largemon Name: qeiefzika-mon Largemon Description : qeiefzika-mon is a large Baboon-like Psychic type largemon 
+ Largemon Name: malldfr-mon Largemon Description : malldfr-mon is a tiny rockfish-like Grass type largemon 
+ Largemon Name: bkndxff-mon Largemon Description : bkndxff-mon is a small Mouse-like Normal type largemon 
+ Largemon Name: malldfr-mon Largemon Description : malldfr-mon is a tiny rockfish-like Grass type largemon 
+ Largemon Name: bkndxff-mon Largemon Description : bkndxff-mon is a small Mouse-like Normal type largemon 

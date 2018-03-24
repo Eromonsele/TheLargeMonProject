@@ -11,3 +11,33 @@ events:
 session ended
 ************************************
 
+
+session started on
+Date and time of game: Sat Mar 24 14:05:11 2018
+Human Player Name : drkae
+Largemon used : pnluupay-mon
+Events:
+COM performed a basic attack.COM Health Points now: 63
+session started on
+Date and time of game: Sat Mar 24 14:05:44 2018
+Human Player Name : dftrr
+Largemon used : jrpgrnusm-mon
+Events:
+COM used defend. Health Points now:41
+dftrr performed defend.Health Points now: 36
+COM performed a basic attack.COM Health Points now: 41
+session started on
+Date and time of game: Sat Mar 24 14:07:54 2018
+Human Player Name : drake
+Largemon used : malldfr-mon
+Events:
+COM used defend. Health Points now:84
+session started on
+Date and time of game: Sat Mar 24 14:11:20 2018
+Human Player Name : daff
+Largemon used : malldfr-mon
+Events:
+daff performed a simple attack. COM Health Points now: 74
+COM used defend. Health Points now:77
+daff performed defend.Health Points now: 74
+COM used defend. Health Points now:80

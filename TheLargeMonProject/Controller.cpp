@@ -9,6 +9,7 @@ Version:
 */
 Controller::Controller()
 {
+	session.setTurn(true);
 }
 
 

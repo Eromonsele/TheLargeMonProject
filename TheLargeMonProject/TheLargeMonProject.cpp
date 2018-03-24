@@ -12,6 +12,8 @@ int main()
 {
 	Controller con;// the contoller
 	int x;
+	cout << "Welcome to the LargeMon Project" <<endl;
+	cout << "////////////////////////////////////////////" << endl;
 	cout << "Press 1 to start the game" << endl;
 	cout << "Press 0 to exit the game" << endl;
 	cin >> x;
@@ -51,13 +53,17 @@ int main()
 					cout << "Input Y(Yes) or N(No):" << endl;
 					cin >> optionChar;
 					// if the option is yes, regenerate largemon 
-					if (optionChar == "Y" || optionChar == "y" || optionChar == "Yes")
+					if (optionChar == "Y" || optionChar == "y" || optionChar == "Yes" || optionChar == "YES")
 					{
 						// largemon generation
 						con.assignLargemonToPlayer(*m_Player[0], *m_Player[1]);						
 					}
-					else {
+					else if (optionChar == "N" || optionChar == "n" || optionChar == "No" || optionChar == "NO")
+					{
 						break;
+					}
+					else {
+						cout << "You haven't selected Yes or No" << endl;
 					}
 				}
 				// Begin the combat session
@@ -65,8 +71,7 @@ int main()
 				// Initialize the combat session
 				session.initCombat(*m_Player[0]);
 				int option;
-				cout << "Combat Begins" << endl;
-				session.setTurn(true);// set the turn of the session to the human's turn
+				cout << "Combat Begins" << endl;				
 				int exitGame = 1;
 				while (exitGame != 0 )
 				{
