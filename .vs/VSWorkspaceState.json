@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\TheLargeMonProject"
+    "\\TheLargeMonProject",
+    "\\TheLargeMonProject\\vpproject"
   ],
-  "SelectedNode": "\\Debug",
+  "SelectedNode": "\\TheLargeMonProject\\vpproject\\Class Diagram1.jpg",
   "PreviewInSolutionExplorer": false
 }
