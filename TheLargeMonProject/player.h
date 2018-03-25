@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include "largeMon.h"
 using namespace std;
 /**
@@ -10,7 +9,7 @@ using namespace std;
 class Player
 {
 public:
-	Player(const string &);	
+	Player(string);	
 
 	void setName(const string &);// set Player name
 	string getName() const; // get player name

@@ -1,9 +1,7 @@
 #pragma once
-#include "largeMon.h"
 #include "LargeMonGenerator.h"
 #include "player.h"
 #include "combat.h"
-#include <fstream>
 
 /*
 The Controller
@@ -16,12 +14,13 @@ class Controller
 public:
 	Controller(); 
 	~Controller();
-	int checkGameStatus(Player &, Player & );// check the game status
-	void gameSession(Player & , Player & );
-	void displayHealthPoints(Player & , Player & );// Display the health points
-	void assignLargemonToPlayer(Player &, Player &);// Assign Largemon to a player
-	void displayLargemonAttributes(Player &);// Display Largemon Attributes
+	int check_game_status(Player &, Player & ) const;// check the game status
+	void game_session(Player & , Player & );
+	void display_health_points(Player & , Player & ) const;// Display the health points
+	void assign_largemon_to_player(Player &, Player &);// Assign Largemon to a player
+	void display_largemon_attributes(Player &) const;// Display Largemon Attributes
 	Combat session;
 	LargeMonGenerator lh;	
 };
+
 

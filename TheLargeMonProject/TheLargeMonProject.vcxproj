@@ -145,7 +145,6 @@
   <ItemGroup>
     <Text Include="combatLog.txt" />
     <Text Include="LargeMonDescriptor.txt" />
-    <Text Include="LargeMonGenerated.txt" />
     <Text Include="LargemonLog.txt" />
     <Text Include="LargeMonSizes.txt" />
     <Text Include="LargeMonTypes.txt" />

@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include <iostream>
 #include <string>
 #include "largeMon.h"
 #include <fstream>
@@ -18,11 +17,11 @@ class LargeMonGenerator
 {
 public:
 	LargeMonGenerator();	
-	LargeMon beginGeneration();//
-	ifstream readfile(string); // returns a list containing information of an external documents
-	string nameGenerator(); // creates and return the largemon name
-	void generatedLargemonLog(string, string, string, string,int, int); // creates and stores a log of largemon generated
+	LargeMon begin_generation();//
+	ifstream readfile(const string&) const; // returns a list containing information of an external documents
+	string name_generator() const; // creates and return the largemon name
+	void generated_largemon_log(const string&, const string&, const string&, const string&,int, int); // creates and stores a log of largemon generated
 private:
-	vector <LargeMon> m_LargeMon;
+	vector <LargeMon> m_large_mon_;
 };
 

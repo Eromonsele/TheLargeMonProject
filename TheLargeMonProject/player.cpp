@@ -1,9 +1,10 @@
 #include "stdafx.h"
 #include "player.h"
+#include <utility>
 
 
 // constructor
-Player::Player(const string &lname) : name(lname), largemon("", "", "", "", 0, 0)
+Player::Player(string lname) : name(std::move(lname)), largemon("", "", "", "", 0, 0)
 {
 	//empty body
 }// end LargeMon constructor
@@ -53,31 +54,31 @@ LargeMon Player::getPlayerLargeMon() const
 // return player largemon healthpoints 
 int Player::getLargeMonHealthPoints() const
 {
-	return largemon.getHealthPoints();
+	return largemon.get_health_points();
 }// end function
 
 // return player largemon attack points
 int Player::getLargeMonAttackpoints() const
 {
-	return largemon.getAttackPoints();
+	return largemon.get_attack_points();
 }// end function
 
 // return player largemon name
 string Player::getLargeMonName() const
 {
-	return largemon.getName();
+	return largemon.get_name();
 }// end function
 
 // return player largemon size
 string Player::getLargeMonSize() const
 {
-	return largemon.getSize();
+	return largemon.get_size();
 }// end function
 
 // return player largemon type
 string Player::getLargeMonType() const
 {
-	return largemon.getType();
+	return largemon.get_type();
 }// end function
 
 // return player largemon weakness
@@ -90,19 +91,19 @@ vector<string> Player::getLargeMonWeakness() const
 void Player::setPlayerLargeMon(LargeMon laremon)
 {
 		
-	largemon = laremon;
+	largemon = std::move(laremon);
 }// end function
 
 // set player largemon healthpoints
 void Player::setLargeMonHealthPoints(int hP)
 {
-	largemon.setHealthPoints(hP);
+	largemon.set_health_points(hP);
 }// end function
 
 // set player largemon attackpoints
 void Player::setLargeMonAttackPoints(int aP)
 {
-	largemon.setAttackPoints(aP);
+	largemon.set_attack_points(aP);
 }// end function
 
 // simulates the singelgame

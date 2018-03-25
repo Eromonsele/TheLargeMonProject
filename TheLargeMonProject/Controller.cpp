@@ -9,7 +9,7 @@ Version:
 */
 Controller::Controller()
 {
-	session.setTurn(true);
+	session.set_turn(true);
 
 }
 
@@ -18,85 +18,119 @@ Controller::~Controller()
 {
 }
 // checks the status of the game, after every turn
-int Controller::checkGameStatus(Player &playerOne, Player &computer)
+int Controller::check_game_status(Player &player_one, Player &computer) const
 {
-	if (playerOne.getLargeMonHealthPoints() < 0 || computer.getLargeMonHealthPoints() < 0)// if healthpoints less than zero
+	if (player_one.getLargeMonHealthPoints() < 0 || computer.getLargeMonHealthPoints() < 0)// if healthpoints less than zero
 	{
-		cout << "GAME OVER!!!!!!!!" << endl;
-		playerOne.singleGame(playerOne.getLargeMonHealthPoints(), computer.getLargeMonHealthPoints());// single game simulation for the human player
-		computer.singleGame(computer.getLargeMonHealthPoints(), playerOne.getLargeMonHealthPoints());// single game simulation for the AI
+		cout << "GAME OVER!!!!!!!!" << endl;// print to console
+		player_one.singleGame(player_one.getLargeMonHealthPoints(), computer.getLargeMonHealthPoints());// single game simulation for the human player
+		computer.singleGame(computer.getLargeMonHealthPoints(), player_one.getLargeMonHealthPoints());// single game simulation for the AI
 
-		if (playerOne.getLargeMonHealthPoints() < 0)// if healthpoints is less than zero
+		if (player_one.getLargeMonHealthPoints() < 0)// if healthpoints is less than zero
 		{
-			session.combatLog("\n" + computer.getName() + " Destroyed " + playerOne.getName());// print to the combat log
+			session.combat_log("\n" + computer.getName() + " Destroyed " + player_one.getName());// print to the combat log
 			cout << computer.getName() << " WINS!!!!!" << endl;// print to the console
-			session.combatLog("\n********************************************************************************************");
+			session.combat_log("\n********************************************************************************************");
 			return 0;
+			
 		}
 		else if (computer.getLargeMonHealthPoints() < 0)// if healthpoints is less than zero
 		{
-			session.combatLog("\n" + playerOne.getName() + " Destroyed " + computer.getName());// print to the combat log
-			cout << playerOne.getName() << " WINS!!!!!" << endl;// print to the console
-			session.combatLog("\n********************************************************************************************");
+			session.combat_log("\n" + player_one.getName() + " Destroyed " + computer.getName());// print to the combat log
+			cout << player_one.getName() << " WINS!!!!!" << endl;// print to the console
+			session.combat_log("\n********************************************************************************************");
 			return 0;
+		}else
+		{
+			return 1;
 		}
 		
+		
+	}
+	else
+	{
 		return 1;
 	}
+
+
+	
 }
 
-void Controller::gameSession(Player &playerOne, Player &computer)
+void Controller::game_session(Player &player_one, Player &computer)
 {
 	int option = 0;
-	if (session.getTurn() == true)
+	if (session.get_turn())
 	{
 
-		cout << "\n" << playerOne.getName() + " turn" << endl;
+		cout << "\n" << player_one.getName() + " turn" << endl;
 		cout << "Pick a battle action" << endl;
 		cout << "Option 1: Simple Attack\nOption 2: Defend\nOption 3: Special Attack" << endl;
-		cin >> option;
-		switch (option)
+		//cin >> option;
+		//cin.clear();
+		//cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		do
 		{
-		case 1:
-			session.simpleAttack(computer, true, playerOne);
-			break;
-		case 2:
-			session.defend(true, playerOne);
-			break;
-		case 3:
-			session.specialAttack(computer, true, playerOne);
-			break;
-		default:
-			break;
+			while (!(cin >> option))
+			{
+				cout << "Incorrect input, Please try again : " << endl;
+				cout << "Option 1: Simple Attack\nOption 2: Defend\nOption 3: Special Attack" << endl;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+			if (option < 0)
+			{
+				cout << "Incorrect input, Please try again : " << endl;
+				cout << "Option 1: Simple Attack\nOption 2: Defend\nOption 3: Special Attack" << endl;
+			}
 		}
+		while (option < 0 ||  option > 3);
+			switch (option)
+			{
+			case 1:
+				session.simple_attack(computer, true, player_one);
+				break;
+			case 2:
+				session.defend(true, player_one);
+				break;
+			case 3:
+				session.special_attack(computer, true, player_one);
+				break;
+			
+			default:
+				std::cout << "You have selected nothing, therefore we play for you" << endl;
+				session.simple_attack(computer, true, player_one);
+				break;
+			}
 
+		
+		
 	}
 	else
 	{
 		cout << "\n" << computer.getName() + " turn" << endl;
-		session.comActions(computer, playerOne);
+		session.com_actions(computer, player_one);
 	}
 }
 
-void Controller::displayHealthPoints(Player &playerOne, Player &computer)
+void Controller::display_health_points(Player &player_one, Player &computer) const
 {
-	cout << "human current healthpoints : " << playerOne.getPlayerLargeMon().getHealthPoints() << endl;
-	cout << "com current healthpoints : " << computer.getPlayerLargeMon().getHealthPoints() << endl;
+	cout << "human current healthpoints : " << player_one.getPlayerLargeMon().get_health_points() << endl;
+	cout << "com current healthpoints : " << computer.getPlayerLargeMon().get_health_points() << endl;
 }
 
-void Controller::assignLargemonToPlayer(Player &playerOne, Player &computer)
+void Controller::assign_largemon_to_player(Player &player_one, Player &computer)
 {
 	
-	playerOne.setPlayerLargeMon(lh.beginGeneration());
-	computer.setPlayerLargeMon(lh.beginGeneration());
+	player_one.setPlayerLargeMon(lh.begin_generation());
+	computer.setPlayerLargeMon(lh.begin_generation());
 }
 
-void Controller::displayLargemonAttributes(Player &user)
+void Controller::display_largemon_attributes(Player &user) const
 {
 	cout << "\nPlayer Name: " << user.getName() << endl;
 	cout << "Generated LargeMon" << endl;
 	cout << "LargeMon Name: " << user.getLargeMonName() << endl;
-	cout << "LargeMon Description: " + user.getLargeMonName() + " is a " + user.getLargeMonSize() + " " + user.getPlayerLargeMon().getDescription() + " " + user.getLargeMonType() + " type." << endl;
+	cout << "LargeMon Description: " + user.getLargeMonName() + " is a " + user.getLargeMonSize() + " " + user.getPlayerLargeMon().get_description() + " " + user.getLargeMonType() + " type." << endl;
 	
 }
 

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "largeMon.h"
 #include <map>
+#include <utility>
 
 /**
 * The largemon objects, holds the largemon healthpoints, attackpoints
@@ -11,50 +12,50 @@
 */
 
 // constructor
-LargeMon::LargeMon(const string &type, const string &name, const string &lsize, const string &description, int attackpoints, int healthPoints)
-	:ltype(type), lname(name), lsize(lsize), ldescription(description), lattackPoints(attackpoints), lhealthPoints(healthPoints)
+LargeMon::LargeMon(string type, string name, string lsize, string description, int attackpoints, int healthPoints)
+	:ltype_(std::move(type)), lname_(std::move(name)), lsize_(std::move(lsize)), ldescription_(std::move(description)), lattack_points_(attackpoints), lhealth_points_(healthPoints)
 {
 	//empty body
 }// end Largemon constructor
 
  // set LargeMon type
-void LargeMon::setType(const string &type)
+void LargeMon::set_type(const string &type)
 {
-	ltype = type;
+	ltype_ = type;
 }// end function
 
 // set LargeMon name
-void LargeMon::setName(const string &name)
+void LargeMon::set_name(const string &name)
 {
-	lname = name;
+	lname_ = name;
 }// end function
 
 // set LargeMon Size
-void LargeMon::setSize(const string &size)
+void LargeMon::set_size(const string &size)
 {
-	lsize = size;
+	lsize_ = size;
 }// end function
 
 // set LargeMon Description
-void LargeMon::setDescription(const string &description)
+void LargeMon::set_description(const string &description)
 {
-	ldescription = description;
+	ldescription_ = description;
 }// end function
 
 // set LargeMon AttackPoints
-void LargeMon::setAttackPoints(int attackpoints)
+void LargeMon::set_attack_points(int attackpoints)
 {
-	lattackPoints = attackpoints;
+	lattack_points_ = attackpoints;
 }// end function
 
 // set LargeMon HealthPoints
-void LargeMon::setHealthPoints(int healthPoints)
+void LargeMon::set_health_points(int healthPoints)
 {
-	lhealthPoints = healthPoints;
+	lhealth_points_ = healthPoints;
 }// end function setHealthPoints
 
 // set LargeMon antagonist or weakness
-void LargeMon::setAntagonist(const string &s)
+void LargeMon::set_antagonist(const string &s)
 {
 	map<string, vector<string>> const m{
 		{ "Fire",{ "Water","Rock","Ground" } },
@@ -76,7 +77,7 @@ void LargeMon::setAntagonist(const string &s)
 		if (s == x.first)
 		{
 			for (auto const& y : x.second) {
-				lWeakness.push_back(y);
+				l_weakness_.push_back(y);
 			}
 		}
 		else
@@ -87,43 +88,43 @@ void LargeMon::setAntagonist(const string &s)
 } // end function setAntagonist
 
 // return largemon type
-string LargeMon::getType() const
+string LargeMon::get_type() const
 {
-	return ltype;
+	return ltype_;
 }// end function getType
 
 // return largemon name
-string LargeMon::getName() const
+string LargeMon::get_name() const
 {
-	return lname;
+	return lname_;
 }// end function getName
 
 // return largemon size
-string LargeMon::getSize() const
+string LargeMon::get_size() const
 {
-	return lsize;
+	return lsize_;
 }// end function getSize
 
 // return largemon description
-string LargeMon::getDescription() const
+string LargeMon::get_description() const
 {
-	return ldescription;
+	return ldescription_;
 }// end function getDescription
 
 // return largemon attackpoints
-int LargeMon::getAttackPoints() const
+int LargeMon::get_attack_points() const
 {
-	return lattackPoints;
+	return lattack_points_;
 }// end function getAttackPoints
 
 // return largemon health points
-int LargeMon::getHealthPoints() const
+int LargeMon::get_health_points() const
 {
-	return lhealthPoints;
+	return lhealth_points_;
 }// end function getHealthPoints
 
 // return largemon weakness
 vector<string> LargeMon::getLWeakness() const
 {
-	return lWeakness;
+	return l_weakness_;
 }// end function getWeakness

@@ -16,7 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
-    <Text Include="LargeMonGenerated.txt" />
     <Text Include="LargeMonTypes.txt" />
     <Text Include="LargeMonSizes.txt" />
     <Text Include="LargeMonDescriptor.txt" />
